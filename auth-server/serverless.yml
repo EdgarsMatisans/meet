@@ -64,10 +64,10 @@ functions:
   getAuthURL:
     handler: handler.getAuthURL
     environment:
-    CLIENT_ID: ${file(config.json):CLIENT_ID}
-    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
-    PROJECT_ID: ${file(config.json):PROJECT_ID}
-    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
+    CLIENT_ID: ${file(config.json):"694465006279-3t9oap9tn3tqol23om76gr4qdolb3k77.apps.googleusercontent.com"}
+    CLIENT_SECRET: ${file(config.json):"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"}
+    PROJECT_ID: ${file(config.json):"meet-app-337400"}
+    CALENDAR_ID: ${file(config.json):"fullstackwebdev@careerfoundry.com"}
 functions:
   getAuthURL:
     handler: handler.getAuthURL
