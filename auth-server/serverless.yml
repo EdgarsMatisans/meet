@@ -6,10 +6,10 @@ provider:
   region: eu-central-1
   timeout: 60 # optional, in seconds, default is 6
   environment:
-    CLIENT_ID: ${file(config.json):"694465006279-3t9oap9tn3tqol23om76gr4qdolb3k77.apps.googleusercontent.com"}
-    CLIENT_SECRET: ${file(config.json):"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"}
-    PROJECT_ID: ${file(config.json):"meet-app-337400"}
-    CALENDAR_ID: ${file(config.json):"fullstackwebdev@careerfoundry.com"}
+    CLIENT_ID: ${file(config.json):CLIENT_ID}
+    CLIENT_SECRET: ${file(config.json):CLIENT_SECRET}
+    PROJECT_ID: ${file(config.json):PROJECT_ID}
+    CALENDAR_ID: ${file(config.json):CALENDAR_ID}
 functions:
   getAuthURL:
     handler: handler.getAuthURL
@@ -22,4 +22,10 @@ functions:
     events:
       - http:
           path: api/token/{code}
+          method: get
+   getCalendarEvents:
+    handler: handler.getCalendarEvents
+    events:
+      - http:
+          path: api/get-events/{access_token}
           method: get
