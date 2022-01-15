@@ -23,7 +23,7 @@ functions:
       - http:
           path: api/token/{code}
           method: get
-   getCalendarEvents:
+  getCalendarEvents:
     handler: handler.getCalendarEvents
     events:
       - http:
