@@ -1,3 +1,5 @@
+org: edgars
+app: my-lambda-layer-app
 service: auth-server
 
 provider:
