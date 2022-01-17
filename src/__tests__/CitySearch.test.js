@@ -18,7 +18,7 @@ describe("<CitySearch /> component", () => {
       query: "Berlin",
     });
 
-    test("render a list of suggestions", () => {
+    test("renders a list of suggestions", () => {
       expect(CitySearchWrapper.find(".suggestions")).toHaveLength(1);
     });
 
