@@ -5,10 +5,9 @@ import Event from "../Event";
 
 describe("<Event /> component", () => {
   let EventWrapper;
-  let event = mockData[0];
 
   beforeAll(() => {
-    EventWrapper = shallow(<Event event={event} />);
+    EventWrapper = shallow(<Event event={mockData[1]} />);
   });
 
   test("renders summary", () => {
