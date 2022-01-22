@@ -1,8 +1,10 @@
 # meet
 
-                                                   **FEATURE 1: FILTER EVENTS BY CITY** 
+                                                  # **FEATURE 1: FILTER EVENTS BY CITY** 
                                                   
-          User story: as a user I should be able to filter events by cities, so that I can see the list of events by cities                                                         SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
+          User story: as a user I should be able to filter events by cities, 
+so that I can see the list of events by cities
+         - SCENARIO 1: WHEN USER HASN’T SEARCHED FOR A CITY, SHOW UPCOMING EVENTS FROM ALL CITIES.
 Given user hasn’t searched for any city
 When the user opens the app
 Then the user should see a list of all upcoming events
