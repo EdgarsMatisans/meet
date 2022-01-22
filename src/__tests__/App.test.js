@@ -3,10 +3,10 @@ import { shallow } from "enzyme";
 import App from "../App";
 import EventList from "../EventList";
 import CitySearch from "../CitySearch";
-import { shallow, mount } from "enzyme";
+import { mount } from "enzyme";
 import { mockData } from "../mock-data";
 import { extractLocations } from "../api";
-import { extractLocations, getEvents } from "../api";
+import { getEvents } from "../api";
 
 describe("<App /> component", () => {
   let AppWrapper;

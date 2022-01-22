@@ -2,7 +2,7 @@ import React from "react";
 
 class NumberOfEvents extends Component {
   state = {
-    numberOfEvents: 12,
+    NumberOfEvents: 12,
     message: "",
   };
 
@@ -14,7 +14,7 @@ class NumberOfEvents extends Component {
       });
     } else {
       this.setState({
-        numberOfEvents: number,
+        NumberOfEvents: number,
         message: "",
       });
     }
