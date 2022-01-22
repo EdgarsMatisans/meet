@@ -21,13 +21,15 @@ Given the details got displayed When expanded the user can click on button to co
     Scenario 1: When user hasn’t specified a number, 32 is the default number. 
 Given the user hasn’t specified the number of event to be displayed When on the main page Then 32 events will be displayed
     Scenario 2: User can change the number of events they want to see.
- Given the possibility to change the number of event to display When the user specifies it Then the that exact number will be displayed  
+ Given the possibility to change the number of event to display When the user specifies it Then the that exact number will be displayed
+ 
           FEATURE 4: USE THE APP WHEN OFFLINE 
  User story:as a user, I should be able to use the app offline, so that I can check events even when not connected . 
     Scenario 1: Show cached data when there’s no internet connection.
  Given the user is offline When using the application Then cached data shows what to be displayed 
     Scenario 2: Show error when user changes the settings (city, time range).
  Given the user is offline When the user changes the settings Then an error will be displayed explaining that when offline the data can only be read
+ 
           FEATURE 5: DATA VISUALIZATION 
 User story: as a user, I should be able to check on the upcoming events, so that I can see events per cities. 
     Scenario 1: Show a chart with the number of upcoming events in each city.
