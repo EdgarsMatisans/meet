@@ -7,6 +7,7 @@ import { mount } from "enzyme";
 import { mockData } from "../mock-data";
 import { extractLocations } from "../api";
 import { getEvents } from "../api";
+import NumberOfEvents from "../NumberOfEvents";
 
 describe("<App /> component", () => {
   let AppWrapper;

@@ -4,6 +4,7 @@ import App from "../App";
 import { mockData } from "../mock-data";
 import { mount, shallow } from "enzyme";
 import CitySearch from "../CitySearch";
+import { extractLocations } from "../api";
 
 const feature = loadFeature("./src/features/filterEventsByCity.feature");
 
@@ -34,7 +35,10 @@ defineFeature(feature, (test) => {
     let CitySearchWrapper;
     given("the main page is open", () => {
       CitySearchWrapper = shallow(
-        <CitySearch updateEvents={() => {}} locations={locations} />
+        <CitySearch
+          updateEvents={() => {}}
+          locations={extractLocations(mockData)}
+        />
       );
     });
 

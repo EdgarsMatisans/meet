@@ -1,6 +1,6 @@
 import React from "react";
 
-class NumberOfEvents extends Component {
+class NumberOfEvents extends React.Component {
   state = {
     NumberOfEvents: 12,
     message: "",
