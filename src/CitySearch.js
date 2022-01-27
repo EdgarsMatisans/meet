@@ -52,7 +52,7 @@ class CitySearch extends Component {
             </li>
           ))}
           <li onClick={() => this.handleItemClicked("all")}>
-            <b>See all cities</b>
+            <b>All cities</b>
           </li>
         </ul>
       </div>
