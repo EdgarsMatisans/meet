@@ -8,7 +8,7 @@ class NumberOfEvents extends React.Component {
 
   handleInputChanged = (event) => {
     const number = event.target.value;
-    if (number <= 0 || number > 100) {
+    if (number <= 1 || number > 100) {
       this.setState({
         message: "Enter number between 1 and 100",
       });
