@@ -19,7 +19,10 @@ defineFeature(feature, (test) => {
       AppWrapper = mount(<App />);
     });
 
-    then("the user should see the list of upcoming events.", () => {});
+    then("the user should see the list of upcoming events.", () => {
+      AppWrapper.update();
+      expect(AppWrapper.find(".event")).toHaveLength(mockData.length);
+    });
   });
 
   test("User should see a list of suggestions when they search for a city", ({
@@ -27,19 +30,14 @@ defineFeature(feature, (test) => {
     when,
     then,
   }) => {
-    given("user hasn’t searched for any city", () => {});
+    given("the main page is open", () => {});
 
-    let AppWrapper;
-    when("the user opens the app", () => {
-      AppWrapper = mount(<App />);
-    });
+    when("the user starts typing in the city textbox", () => {});
 
-    then("the user should see the list of upcoming events.", () => {
-      AppWrapper.update();
-      expect(AppWrapper.find(".event").hostNodes()).toHaveLength(
-        mockData.length
-      );
-    });
+    then(
+      "the user should receive a list of cities (suggestions) that match what they’ve typed",
+      () => {}
+    );
   });
 
   test("User can select a city from the suggested list", ({

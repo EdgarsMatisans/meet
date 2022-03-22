@@ -13,34 +13,40 @@ class Event extends Component {
   };
 
   render() {
-    const { events } = this.props;
+    const { event } = this.props;
     const { collapsed } = this.state;
 
     return (
-      <div className="summary">
-        <h4>{events.description}</h4>
+      <div className="events">
+        <p className="summary"> {event.summary}</p>
+
+        <div className="start-date">
+          {event.start.dateTime}
+          <p className="start-time"></p>
+          {event.start.timeZone}
+        </div>
+
         <p className="location">
-          {events.summary} {events.location}
-          {events.start.dateTime} {events.start.timeZone}
+          {event.summary} | {event.location}
         </p>
-        <button
-          variant="outline-info"
-          className={`${collapsed ? "show" : "hide"}-details`}
-          onClick={this.handleClick}
-        >
-          {collapsed ? "Details" : "Hide Details"}
-        </button>
+
         {!collapsed && (
           <div
             className={`extra-details ${
               this.state.collapsed ? "hide" : "show"
             }`}
           >
-            <h3>Details:</h3>
+            <h4 className="about">More Info</h4>
 
-            <p className="event-description">{events.description}</p>
+            <p className="event-description">{event.description}</p>
           </div>
         )}
+        <button
+          className={`${collapsed ? "show" : "hide"}-details-btn`}
+          onClick={this.handleClick}
+        >
+          {collapsed ? "Want to go?" : "Maybe not"}
+        </button>
       </div>
     );
   }
