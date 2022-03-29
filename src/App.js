@@ -5,12 +5,15 @@ import CitySearch from "./CitySearch";
 import NumberOfEvents from "./NumberOfEvents";
 import { getEvents, extractLocations } from "./api";
 import "./nprogress.css";
+import { WarningAlert } from "./alert";
 
 class App extends Component {
   state = {
     events: [],
     locations: [],
     numberOfEvents: 32,
+    currentLocation: "all",
+    errorText: "",
   };
 
   componentDidMount() {
@@ -26,7 +29,7 @@ class App extends Component {
     this.mounted = false;
   }
 
-  updateEvents = (location, eventCount) => {
+  updateEvents = (location) => {
     getEvents().then((events) => {
       const locationEvents =
         location === "all"
@@ -38,19 +41,23 @@ class App extends Component {
     });
   };
 
-  updateNumberOfEvents = (numberOfEvents) => {
-    this.setState(
-      {
-        numberOfEvents,
-      },
-      this.updateEvents(this.state.location, numberOfEvents)
-    );
+  updateNumberOfEvents = async (e) => {
+    const { currentLocation } = this.state;
+    this.setState({
+      numberOfEvents: e,
+    });
+    this.updateEvents(currentLocation, e);
   };
 
   render() {
     return (
       <div className="App">
-        <NumberOfEvents updateEventNumbers={this.updateEventNumbers} />
+        <WarningAlert text={this.state.infoText} />
+        <NumberOfEvents
+          numberOfEvents={this.state.numberOfEvents}
+          updateNumberOfEvents={this.updateNumberOfEvents}
+        />
+
         <CitySearch
           locations={this.state.locations}
           updateEvents={this.updateEvents}

@@ -1,39 +1,39 @@
-import React from "react";
+import React, { Component } from "react";
 import { ErrorAlert } from "./alert";
 
-class NumberOfEvents extends React.Component {
+class NumberOfEvents extends Component {
   state = {
-    NumberOfEvents: 12,
-    message: "",
+    numberOfEvents: 12,
+    errorText: "",
   };
 
   handleInputChanged = (event) => {
-    const number = event.target.value;
-    if (number <= 1 || number > 100) {
+    const value = event.target.value;
+    this.setState({ numberOfEvents: value });
+    if (value > 0 && value < 33) {
       this.setState({
-        message: "Enter number between 1 and 100",
+        numberOfEvents: value,
+        errorText: "",
       });
     } else {
       this.setState({
-        NumberOfEvents: number,
-        message: "",
+        numberOfEvents: "",
+        errorText: "Please enter a number between 1 and 32",
       });
     }
+    this.props.updateNumberOfEvents(event.target.value);
   };
-
   render() {
     return (
-      <div className="CitySearch">
-        <ErrorAlert text={this.state.infoText} />
+      <div className="NumberOfEvents">
+        <h4>Number of Events</h4>
         <input
-          type="text"
-          className="numberOfEvents"
-          value={this.state.query}
-          onChange={this.handleInputChanged}
-          onFocus={() => {
-            this.setState({ showSuggestions: true });
-          }}
-        />
+          className="number-of-events"
+          type="number"
+          value={this.props.numberOfEvents}
+          onChange={(e) => this.handleInputChanged(e)}
+        ></input>
+        <ErrorAlert text={this.state.errorText} />
       </div>
     );
   }
