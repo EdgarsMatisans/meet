@@ -52,6 +52,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        {!navigator.onLine ? (
+          <WarningAlert text="You are offline!" />
+        ) : (
+          <WarningAlert text="" />
+        )}
+
         <WarningAlert text={this.state.infoText} />
         <NumberOfEvents
           numberOfEvents={this.state.numberOfEvents}
