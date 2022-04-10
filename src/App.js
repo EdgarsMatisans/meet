@@ -90,7 +90,7 @@ class App extends Component {
         />
 
         <div className="data-vis-wrapper">
-          <EventGenre events={events} />
+          <EventGenre events={this.state.events} />
           <ResponsiveContainer height={400}>
             <ScatterChart margin={{ top: 20, right: 20, bottom: 10, left: 10 }}>
               <CartesianGrid strokeDasharray="3 3" />
@@ -99,7 +99,7 @@ class App extends Component {
 
               <Tooltip cursor={{ strokeDasharray: "3 3" }} />
               {/* <Legend /> */}
-              <Scatter data={this.getData()} fill="#8884d8" />
+              <Scatter data={this.getData()} fill="blue" />
             </ScatterChart>
           </ResponsiveContainer>
         </div>

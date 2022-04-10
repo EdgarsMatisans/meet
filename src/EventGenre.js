@@ -9,7 +9,7 @@ const EventGenre = ({ events }) => {
       const data = genres.map((genre) => {
         const value = events.filter((event) =>
           event.summary.split(" ").includes(genre)
-        ).lenght;
+        ).length;
 
         return { name: genre, value: value };
       });
@@ -27,7 +27,7 @@ const EventGenre = ({ events }) => {
           cy={200}
           labelLine={false}
           outerRadius={80}
-          fill="#8884d8"
+          fill="blue"
           dataKey="value"
           label={({ name, percent }) =>
             `${name} ${(percent * 100).toFixed(0)}%`
